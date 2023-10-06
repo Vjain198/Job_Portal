@@ -6,9 +6,13 @@ const FilterCard = ({ item, handleChangeValue }) => {
   const heading = item?.heading;
 
   const handleChange = (value, label) => {
-    console.log(label, "change");
-    console.log(value);
     handleChangeValue(label.label);
+  };
+
+  const handleChecked = (checked, val) => {
+    if (checked) {
+      handleChangeValue(val);
+    }
   };
 
   const items = [
@@ -26,7 +30,12 @@ const FilterCard = ({ item, handleChangeValue }) => {
                   flexDirection: "column",
                 }}
               >
-                <Checkbox id={arr?.id}>{arr?.name}</Checkbox>
+                <Checkbox
+                  id={arr?.id}
+                  onChange={(e) => handleChecked(e.target.checked, arr.name)}
+                >
+                  {arr?.name}
+                </Checkbox>
               </div>
             );
           })}

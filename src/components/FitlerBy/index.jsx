@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { getFilterData } from "../../Api";
 import FilterCard from "../FilterCard";
 import { CloseCircleOutlined, FilterOutlined } from "@ant-design/icons";
-import { Divider } from "antd";
+import { Divider, Switch } from "antd";
 
 const FilterBy = () => {
   const [filterData, setFilterData] = useState([]);
@@ -31,6 +31,12 @@ const FilterBy = () => {
     setSelectValue([...selectvalue, value]);
   };
 
+  const handleClear = (value) => {
+    const newVal = selectvalue.filter((item) => {
+      return item !== value;
+    });
+    setSelectValue(newVal);
+  };
   return (
     <div
       style={{
@@ -56,25 +62,31 @@ const FilterBy = () => {
           <FilterOutlined />
           <p>FilterBy</p>
         </div>
-        <div style={{ color: "green" }} onClick={() => setSelectValue("")}>
+        <div
+          style={{ color: "green", cursor: "pointer" }}
+          onClick={() => setSelectValue("")}
+        >
           Clear All
         </div>
       </div>
       <Divider />
       {selectvalue.length ? (
-        <>
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill,minmax(100px , 1fr))",
+            gridGap: "2px",
+          }}
+        >
           {selectvalue?.map((val, i) => {
             return (
               <>
                 <div
                   key={i}
                   style={{
-                    display: "flex",
-                    gap: "4px",
-                    gridColumn: "20px",
-                    width: "fit-content",
                     padding: "10px",
-                    margin: "10px",
+                    margin: "5px",
+                    textAlign: "center",
                     backgroundColor: "lightgreen",
                     color: "black",
                     border: "1px solid #e6e6e6",
@@ -89,17 +101,17 @@ const FilterBy = () => {
                     }}
                   >
                     {val}
-                    {<CloseCircleOutlined onClick={() => setSelectValue("")} />}
+                    {<CloseCircleOutlined onClick={() => handleClear(val)} />}
                   </div>
                 </div>
               </>
             );
           })}
-          <Divider />
-        </>
+        </div>
       ) : (
         ""
       )}
+      {selectvalue.length ? <Divider /> : ""}
 
       <div className="keyword">
         <FilterCard item={keyword} handleChangeValue={selectValueChange} />
@@ -147,6 +159,17 @@ const FilterBy = () => {
         <FilterCard item={salary} handleChangeValue={selectValueChange} />
       </div>
       <br />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          padding: "0px 10px",
+        }}
+      >
+        <p>Work From Home</p>
+        <Switch />
+      </div>
     </div>
   );
 };
