@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { getDetailData, getFilterData } from "../../Api";
 import DetailCard from "../DetailCard";
 import "./sortby.css";
-import SIdeFilter from "../SideFilter";
+
 
 const SortBy = () => {
   const [sortData, setSortData] = useState({});
@@ -86,7 +86,7 @@ const SortBy = () => {
           <DetailCard sortData={details} loading={loading} />
         )}
       </div>
-      <SIdeFilter />
+      
     </div>
   );
 };
