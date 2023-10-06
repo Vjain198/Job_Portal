@@ -1,19 +1,32 @@
-.top{
+.card-detail {
+   width: 550px;
+   padding: 10px 0px;
+   box-shadow: 0px 0px 10px 2px #0000001A;
+   overflow-y: hidden;
+   border-radius: 8px;
+   backdrop-filter: blur(30px);
+   background-color: #fff;
+   margin-bottom: 10px;
+
+}
+
+.top {
    display: flex;
    align-items: center;
    gap: 12px;
 }
-.middle ,.bottom{
-   
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+
+.middle, .bottom {
+
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+
 }
-.office,.salary,.experience , .location , .skills , .posted{
+
+.office, .salary, .experience, .location, .skills, .posted {
    display: flex;
    gap: 5px;
    align-items: center;
    margin: 5px 0px;
 }
-

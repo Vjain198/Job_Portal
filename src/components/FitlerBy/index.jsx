@@ -25,19 +25,8 @@ const FilterBy = () => {
   const job_category = filterData?.data?.job_category;
   const work_experience = filterData?.data?.work_experience;
   const salary = filterData?.data?.salary;
-  const work_from_home = filterData?.data?.work_from;
 
   const selectValueChange = (label, value) => {
-    console.log(label, value);
-    setParamVal((prev) => {
-      return [
-        ...prev,
-        {
-          param_name: company.param_name,
-          data: value,
-        },
-      ];
-    });
     setSelectValue([...selectvalue, label]);
   };
   const handleClear = (value) => {
@@ -45,6 +34,12 @@ const FilterBy = () => {
       return item !== value;
     });
     setSelectValue(newVal);
+  };
+
+  const handleRedirect = (e) => {
+    if (e) {
+      console.log("redirect", e);
+    }
   };
 
   return (
@@ -179,7 +174,7 @@ const FilterBy = () => {
         }}
       >
         <p>Work From Home</p>
-        <Switch />
+        <Switch onChange={(e) => handleRedirect(e)} />
       </div>
     </div>
   );

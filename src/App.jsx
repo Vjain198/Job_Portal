@@ -4,49 +4,26 @@ import SortBy from "./components/SortBy";
 import { Header } from "antd/es/layout/layout";
 import Sider from "antd/es/layout/Sider";
 import InfoCard from "./components/InfoCard";
-
+import "./App.css";
 function App() {
   const nav = ["Overview", "Jobs", "Internships", "Resume Maker"];
   return (
     <>
-      <Header
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 1,
-          width: "100%",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          backgroundColor: "#00203F",
-        }}
-      >
+      <Header className="header">
         <div>
           <Image src="http://test.getwork.org/png/newFlow/white-logo.svg" />
         </div>
         <Menu
-          style={{
-            width: "500px",
-            backgroundColor: "#00203F",
-            color: "#ffffff",
-          }}
+          className="menu"
           mode="horizontal"
           items={nav?.map((item, index) => {
-            console.log(item);
             return {
               key: index + 1,
               label: item,
             };
           })}
         />
-        <Button
-          style={{
-            width: "120px",
-            padding: "0px 10px",
-            color: "00203F",
-          }}
-          size="large"
-        >
+        <Button className="button" size="large">
           Login/Signup
         </Button>
       </Header>

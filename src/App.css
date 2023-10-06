@@ -1,0 +1,24 @@
+.header {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #00203f;
+}
+
+.menu {
+    width: 500px;
+    background-color: #00203f;
+    color: #ffffff;
+}
+
+.button {
+    width: 120px;
+    padding: 0px 10px;
+    color: #00203F;
+    /* Assuming this is the correct color value */
+
+}

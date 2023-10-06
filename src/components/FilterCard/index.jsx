@@ -6,7 +6,7 @@ const FilterCard = ({ item, handleChangeValue }) => {
   const heading = item?.heading;
 
   const handleChange = (value, label, params) => {
-    handleChangeValue(label.label, label.value, params);
+  handleChangeValue(label.label, label.value, params);
   };
 
   const handleChecked = (checked, val) => {
