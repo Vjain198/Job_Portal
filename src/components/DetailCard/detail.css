@@ -1,0 +1,19 @@
+.top{
+   display: flex;
+   align-items: center;
+   gap: 12px;
+}
+.middle ,.bottom{
+   
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.office,.salary,.experience , .location , .skills , .posted{
+   display: flex;
+   gap: 5px;
+   align-items: center;
+   margin: 5px 0px;
+}
+
