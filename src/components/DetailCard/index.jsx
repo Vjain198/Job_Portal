@@ -25,14 +25,14 @@ const DetailCard = ({ sortData, loading }) => {
                     padding: "0 20px",
                   }}
                   style={{
-                    width: "650px",
+                    width: "550px",
                     padding: "10px 0px",
-                    margin: "10px 0px",
                     boxShadow: "0px 0px 10px 2px #0000001A",
                     overflowY: "hidden",
                     borderRadius: "8px",
                     backdropFilter: "blur(30px)",
                     backgroundColor: "#fff",
+                    marginBottom: "10px",
                   }}
                 >
                   <div className="top">

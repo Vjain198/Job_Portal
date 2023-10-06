@@ -14,7 +14,7 @@ const FilterBy = () => {
     FilterData().then((data) => setFilterData(data));
   });
   const [selectvalue, setSelectValue] = useState([]);
-
+  const [paramVal, setParamVal] = useState([]);
   const keyword = filterData?.data?.keyword;
   const company = filterData?.data?.company;
   const job_segment = filterData?.data?.job_segment;
@@ -27,27 +27,38 @@ const FilterBy = () => {
   const salary = filterData?.data?.salary;
   const work_from_home = filterData?.data?.work_from;
 
-  const selectValueChange = (value) => {
-    setSelectValue([...selectvalue, value]);
+  const selectValueChange = (label, value) => {
+    console.log(label, value);
+    setParamVal((prev) => {
+      return [
+        ...prev,
+        {
+          param_name: company.param_name,
+          data: value,
+        },
+      ];
+    });
+    setSelectValue([...selectvalue, label]);
   };
-
   const handleClear = (value) => {
     const newVal = selectvalue.filter((item) => {
       return item !== value;
     });
     setSelectValue(newVal);
   };
+
   return (
     <div
       style={{
         display: "flex",
         flexDirection: "column",
-        width: "280px",
+        minWidth: "280px",
         height: "auto",
+        marginTop: "20px",
         boxShadow: "0px 0px 10px 2px #0000001A",
         borderRadius: "8px",
         backdropFilter: "blur(30px)",
-        backgroundColor: "#fff",
+        backgroundColor: "#ffffff",
       }}
     >
       <div

@@ -5,8 +5,8 @@ const FilterCard = ({ item, handleChangeValue }) => {
   const arr = item?.data;
   const heading = item?.heading;
 
-  const handleChange = (value, label) => {
-    handleChangeValue(label.label);
+  const handleChange = (value, label, params) => {
+    handleChangeValue(label.label, label.value, params);
   };
 
   const handleChecked = (checked, val) => {

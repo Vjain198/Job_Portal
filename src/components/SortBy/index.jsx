@@ -4,7 +4,6 @@ import { getDetailData, getFilterData } from "../../Api";
 import DetailCard from "../DetailCard";
 import "./sortby.css";
 
-
 const SortBy = () => {
   const [sortData, setSortData] = useState({});
   const [options, setOptions] = useState([]);
@@ -49,10 +48,10 @@ const SortBy = () => {
   };
 
   return (
-    <div className="container">
+    <div>
       <div
         style={{
-          width: "630px",
+          width: "540px",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -86,7 +85,6 @@ const SortBy = () => {
           <DetailCard sortData={details} loading={loading} />
         )}
       </div>
-      
     </div>
   );
 };
